@@ -246,3 +246,70 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to20.cpp)
 ---
+### #21 栈的压入、弹出序列
+#### Date: 2018/3/15
+#### Solution
+```
+1. 借用临时栈
+2. 按照出入栈的顺序来判断
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to21.cpp)
+---
+### #22 从上往下打印二叉树
+#### Date: 2018/3/15
+#### Solution
+```
+1. 广度优先遍历
+2. 用queue<>实现
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to22.cpp)
+---
+### #23 二叉搜索树的后序遍历序列
+#### Date: 2018/3/15
+#### Solution
+```
+1. 数组的最后一个数是根
+2. 根据比根值大的为右子树，比根值小的为左子树
+2. 如果划分左子树时出现大数则返回false
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to23.cpp)
+---
+### #24 二叉树中和为某一值的路径
+#### Date: 2018/3/15
+#### Solution
+```
+1. 数组的最后一个数是根
+2. 根据比根值大的为右子树，比根值小的为左子树
+2. 如果划分左子树时出现大数则返回false
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to24.cpp)
+---
+### #25 复杂链表的复制
+#### Date: 2018/3/15
+#### Solution
+```
+1. map映射
+2. 先设置next再根据map设置random
+3. 空间换时间
+```
+#### Note
+```
+1. 更好的思路，不用辅助时间
+2. 第一步复制原始链表上的每一个结点N创建对应的N’，并把N’放在N之后
+3. 设置每个结点的random 指针。如果原始链表上的结点N的random指向S，则对应的复制结点N’的random指向S’
+4. 把长链表分为两个链表:把奇数位置的结点用next连接起来就是原始链表，把偶数位置的结点用next连接起来就是复制出来的链表
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to25.cpp)
+---
