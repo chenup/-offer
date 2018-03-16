@@ -313,3 +313,64 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to25.cpp)
 ---
+### #26 二叉搜索树与双向链表
+#### Date: 2018/3/16
+#### Solution
+```
+1. 划分左右子树
+2. 设置pre结点记录当前结点的前续结点，设置head结点记录链表首部结点
+3. 将pre和当前结点相连
+4. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to26.cpp)
+---
+### #27 字符串的排列
+#### Date: 2018/3/16
+#### Solution
+```
+1. 递归
+2. 注意重复字符
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to27.cpp)
+---
+### #28 数组中出现次数超过一半的数字
+#### Date: 2018/3/16
+#### Solution
+```
+1. 投票法
+2. 验证
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to28.cpp)
+---
+### #29 最小的K个数
+#### Date: 2018/3/16
+#### Solution
+```
+1. 快排
+2. k最大堆，适合海量数据，内存无法全部放下
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to29.cpp)
+---
+### #30 连续子数组的最大和
+#### Date: 2018/3/16
+#### Solution
+```
+1. 非动规，遍历数组，遇到sum < it时，抛弃前面的数，令sum = it，比较每次的sum得到最大值
+2. 动规，用max来保存dp[i]中的最大值，dp[i] = max(dp[i - 1] + array[i], array[i])
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to30.cpp)
