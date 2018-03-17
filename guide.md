@@ -374,3 +374,292 @@
 ```
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to30.cpp)
+---
+### #31 整数中1出现的次数（从1到n整数中1出现的次数）
+#### Date: 2018/3/17
+#### Solution
+```
+1. 数学规律题
+2. 当计算右数第 i 位包含的 x 的个数时：
+3. 取第 i位左边(高位)的数字，乘以 10^(i-1)，得到基础值 a
+4. 取第 i 位数字，计算修正值
+5. 如果大于 x , 则结果为 a + 10^(i-1)
+6. 如果小于 x，则结果为 a
+7. 如果等于 x，则取第 i 位右边(低位)数字，设为 b，最后结果为 a + b + 1
+```
+#### Note
+```
+1. 百度大法好
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to31.cpp)
+---
+### #32 把数组排成最小的数
+#### Date: 2018/3/17
+#### Solution
+```
+1. 快排
+2. 字符串a和b比较时，因为是比较连接后哪个更小且由于长度不相同，可以比较ab和ba的大小，它们分别是两种连接方案，并且长度相等
+```
+#### Note
+```
+1. 快排的compare函数必须放在类外
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to32.cpp)
+---
+### #33 丑数
+#### Date: 2018/3/17
+#### Solution
+```
+1. 动态规划
+2. 数学规律
+3. 空间换时间
+4. dp[i]都有 *2、*3、*5的选择
+5. 丑陋数序列可以拆分为下面3个子列表：
+(1) 1x2,  2x2, 2x2, 3x2, 3x2, 4x2, 5x2...
+(2) 1x3,  1x3, 2x3, 2x3, 2x3, 3x3, 3x3...
+(3) 1x5,  1x5, 1x5, 1x5, 2x5, 2x5, 2x5...
+6. 仔细观察上述三个列表，我们可以发现每个子列表都是一个丑陋数分别乘以2,3,5，而要求的丑陋数是从已经生成的序列中取出来的，我们每次都从三个列表中取出当前最小的那个加入序列
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to33.cpp)
+---
+### #34 第一个只出现一次的字符
+#### Date: 2018/3/17
+#### Solution
+```
+1. 遍历一遍字符串
+2. 用2个26单元的数组来保存字母出现的次数和索引
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to34.cpp)
+---
+### #35 数组中的逆序对
+#### Date: 2018/3/17
+#### Solution
+```
+1. 归并排序，稳定的
+2. 分治法
+3. 需要用到额外内存保存中间数组
+4. 逆序对的总数=左边数组中的逆序对的数量+右边数组中逆序对的数量+左右结合成新的顺序数组时中出现的逆序对的数量
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to35.cpp)
+---
+### #36 两个链表的第一个公共结点
+#### Date: 2018/3/17
+#### Solution
+```
+1. 先确定两个链表各自的长度
+2. 然后长的那个链表从首部移动直到两者的长度一样长
+3. 最后依次比较
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to36.cpp)
+---
+### #37 两个链表的第一个公共结点
+#### Date: 2018/3/17
+#### Solution
+```
+1. 二分搜索
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to37.cpp)
+---
+### #38 二叉树的深度
+#### Date: 2018/3/17
+#### Solution
+```
+1. dfs
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to38.cpp)
+---
+### #39 平衡二叉树
+#### Date: 2018/3/17
+#### Solution
+```
+1. 左右子树的高度差不超过1
+2. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to39.cpp)
+---
+### #40 数组中只出现一次的数字
+#### Date: 2018/3/17
+#### Solution
+```
+1. 遍历数组把所有数异或
+2. 取结果里面第一个为1的位，表示想要的那两个数在该位不同
+3. 再遍历一遍数组，将数组分为两部分，每一部分有一个要求的数, 各个部分再异或
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to40.cpp)
+---
+### #41 和为S的连续正数序列
+#### Date: 2018/3/17
+#### Solution
+```
+1. 双指针贪心
+2. 窗口思想
+3. 中位数法
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to41.cpp)
+---
+### #41 和为S的连续正数序列
+#### Date: 2018/3/17
+#### Solution
+```
+1. 双指针贪心
+2. 窗口思想
+3. 中位数法
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to41.cpp)
+---
+### #42 和为S的两个数字
+#### Date: 2018/3/17
+#### Solution
+```
+1. 双指针
+2. 窗口思想
+3. 指针往中间收敛
+4. 遇到的第一对符合的就是乘积最小的
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to42.cpp)
+---
+### #43 翻转单词顺序列
+#### Date: 2018/3/17
+#### Solution
+```
+1. 对n取模
+2. 取字符串的子串拼接
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to43.cpp)
+---
+### #44 翻转单词顺序列
+#### Date: 2018/3/17
+#### Solution
+```
+1. 用sstringstream去除空格
+2. 先翻转单词再翻转句子
+3. 注意句首和句末的空格
+```
+#### Note
+```
+1. 在写程序的过程中，经常会遇到要比较两个字符串是否相等的情况。如果要比较的对象是char*字符串，则利用int strcmp(const char* s1,const char* s2)
+当s1<s2时，返回为负数
+当s1==s2时，返回值= 0
+当s1>s2时，返回正数
+特别注意：strcmp(const char *s1,const char * s2)这里面只能比较字符串，即可用于比较两个字符串常量，或比较数组和字符串常量，不能比较数字等其他形式的参数
+2. 如果要比较的对象是两个string，则利用函数compare()。若要比较string s1和s2则写为：s1.compare(s2)，若返回值为0，则两者相等
+3. STL标准库中的std::string重载了==运算符
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to44.cpp)
+---
+### #45 扑克牌顺子
+#### Date: 2018/3/17
+#### Solution
+```
+1. 快排
+2. 0的数目要大于等于缺口的数目
+3. 不能有对子
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to45.cpp)
+---
+### #46 孩子们的游戏(圆圈中最后剩下的数)
+#### Date: 2018/3/17
+#### Solution
+```
+1. 约瑟夫环
+2. 动态规划
+3. 由p = 1反推到 p = n
+4. x'=(x+k)%n, x[1] = 0 
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to46.cpp)
+---
+### #47 求1+2+3+...+n
+#### Date: 2018/3/17
+#### Solution
+```
+1. 递归
+2. 短路原理
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to47.cpp)
+---
+### #48 不用加减乘除做加法
+#### Date: 2018/3/17
+#### Solution
+```
+1. 用三步走的方式计算二进制值相加： 5-101，7-111 
+2. 第一步：相加各位的值，不算进位，得到010，二进制每位相加就相当于各位做异或操作，101^111
+3. 第二步：计算进位值，得到1010，相当于各位做与操作得到101，再向左移一位得到1010，(101&111)<<1
+4. 第三步重复上述两步， 各位相加 010^1010=1000，进位值为100=(010&1010)<<1
+5. 继续重复上述两步：1000^100 = 1100，进位值为0，跳出循环，1100为最终结果
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to48.cpp)
+---
+### #49 把字符串转换成整数
+#### Date: 2018/3/17
+#### Solution
+```
+1. 注意加减号
+2. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to49.cpp)
+---
+### #50 数组中重复的数字
+#### Date: 2018/3/17
+#### Solution
+```
+1. 根据题目的特性，不能使用抽屉原理和求环
+2. 如果数组不可更改的话我们可以使用hash表来记录
+3. 如果数组可以更改，第一个是使用快排
+4. 第二个就是将信息记录在数组的元素里面，如果有重复的数，并且把数作为数组索引，则代表它可以对一个位置执行两次，那么假如原来的值为正整数则将其变为负数，如果为0则将其变为n，当第二次操作时遇到这种信息就知道该值的索引有重复值
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to50.cpp)
+---
