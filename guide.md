@@ -663,3 +663,42 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to50.cpp)
 ---
+### #51 构建乘积数组
+#### Date: 2018/3/17
+#### Solution
+```
+1. 设置B[0 ~ n-1] = { 1, A[0], A[0]*A[1], ... A[0]*A[1]*..A[n-2]}
+2. 设置tmp[0 ~ n-1] = { A[1]*A[2]..., A[2]..., A[3]...*A[n-2]*A[n-1], ... A[n-2]*A[n-1] ,A[n-1], 1}
+3. 两个数组对应元素相乘
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to51.cpp)
+---
+### #55 链表中环的入口结点
+#### Date: 2018/3/17
+#### Solution
+```
+1. 快慢指针，快指针比慢指针快一倍
+2. 先找到快慢指针的汇点，再找到头指针与慢指针的汇点就是环的入口点
+3. 注意无环的情况
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to55.cpp)
+---
+### #56 删除链表中重复的结点
+#### Date: 2018/3/17
+#### Solution
+```
+1. 遍历链表
+2. 双指针
+3. 新建一个头结点
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to56.cpp)
+---
