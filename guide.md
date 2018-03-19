@@ -702,3 +702,30 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to56.cpp)
 ---
+### #58 对称的二叉树
+#### Date: 2018/3/19
+#### Solution
+```
+1. 递归
+2. 分别判断左子树的左子树与右子树的右子树、左子树的右子树和右子树的左子树
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to58.cpp)
+---
+### #59 按之字形顺序打印二叉树
+#### Date: 2018/3/19
+#### Solution
+```
+1. 定义两个栈，一个从左到右ltr，一个从右到左rtl
+2. 从ltr栈pop出的先push left child再push right child 到rtl栈
+3. 从rtl栈pop出的先push right child再push left child 到ltr栈
+4. 保存中间输出结果
+5. 迭代直到栈中无结点pop
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to59.cpp)
+---
