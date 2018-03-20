@@ -4,6 +4,9 @@
 #include <map>
 #include <vector>
 #include <set>
+#include <memory>
+
+#define INULL INT_MIN
 
 using namespace std;
 
@@ -28,16 +31,61 @@ struct TreeNode {
 
 class Solution {
 public:
-    void test(void)
+    char* Serialize(TreeNode *root) 
+    {   
+        string str = dfs(root);
+		char* ret = new char[str.size() + 1];
+		int i;
+        for(i = 0; i < str.size(); i++)
+		{
+			ret[i] = str[i];
+		}
+		ret[i] = '\0'; 
+        return ret;
+    }
+    TreeNode* Deserialize(char *str) 
     {
+    	int i = 0;
+    	return ddfs(str, i);
+    }
 
+    TreeNode* ddfs(char *str, int& i)
+    {
+    	if(str[i] == '#')
+    	{
+    		i = i + 2;
+    		return nullptr;
+    	}
+    	int num = 0;
+    	while(str[i] != '!')
+    	{
+    		num = num * 10 + str[i] - '0';
+    		i++;
+    	}
+    	i++;
+    	TreeNode* root = new TreeNode(num);
+    	root->left = ddfs(str, i);
+    	root->right = ddfs(str, i);
+    	return root;
+    }
+
+    string dfs(TreeNode* root)
+    {
+        string str = "";
+        if(root == NULL)
+        {
+            return string("#!");
+        }
+        str = str + to_string(root->val) + "!";
+        str += dfs(root->left);
+        str += dfs(root->right);
+        return str;
     }
 };
-
 //对象初始化
 ListNode* initListNode()
 {
-	vector<int> nums = {4, 5, 6, 1, 0};
+	vector<int> nums = {1, 2, 3};
 	ListNode* p;
 	ListNode* tail;
 	ListNode* head = NULL;
@@ -66,31 +114,35 @@ vector<vector<int>> initMatrix()
 	return res;
 }
 
-/*
 TreeNode* initTree()
 {
-	TreeNode* root;
-	vector<int> node = {1};
-	root = createTree(node, 0);
-	return root;
+	vector<int> val = {1, 2, 3, INULL, 5};
+	vector<TreeNode*> tVec(val.size());
+	for(int i = 0; i < val.size(); i++)
+	{
+		if(val[i] == INULL)
+		{
+			tVec[i] = nullptr;
+		}
+		else
+		{
+			tVec[i] = new TreeNode(val[i]);
+		}
+	}
+	for(int i = 0; i < tVec.size(); i++)
+	{
+		if(2 * i + 1 < tVec.size())
+		{
+			tVec[i]->left = tVec[2 * i + 1];
+		}
+		if(2 * i + 2 < tVec.size())
+		{
+			tVec[i]->right = tVec[2 * i + 2];
+		}
+	}
+	return tVec[0];
 }
 
-TreeNode* createTree(vector<int>& node, int i)
-{
-	if(i >= node.size())
-	{
-		return NULL;
-	}
-	if(node[i] == -1)
-	{
-		return NULL;
-	}
-	root = new TreeNode(node[i]);
-	root->left = createTree(node, i + 1);
-	root->right = createTree(node, i + 2);
-	return root;
-}
-*/
 //输出
 void printListNode(ListNode* res)
 {
@@ -137,7 +189,7 @@ void printTree(TreeNode* root)
 int main()
 {
 	//树输入
-	//TreeNode* root = initTree();
+	TreeNode* root = initTree();
 	
 	//链表输入
 	//ListNode* head = initListNode();
@@ -146,19 +198,20 @@ int main()
 	//vector<vector<int>> nums = initMatrix(); 
 	
 	//计算
-	Solution().test();
-
+	char* str = Solution().Serialize(root);
+	cout << str << endl;
+	TreeNode* res = Solution().Deserialize(str);
 	//链表输出
 	//printListNode(res);
 	
 	//矩阵输出
-	printMatrix(nums);
+	//printMatrix(nums);
 
 	//数组输出
 	//printArray(res);
 	
 	//树的中序输出
-	//printTree(res);
+	printTree(res);
 
 	return 0;
 }

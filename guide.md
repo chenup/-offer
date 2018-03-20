@@ -729,3 +729,30 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to59.cpp)
 ---
+### #60 树的子结构
+#### Date: 2018/3/20
+#### Solution
+```
+1. 用两个queue
+2. 广度优先遍历
+3. 也可以只用一个queue，但是要记录每层的结点数
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to60.cpp)
+---
+### #61 序列化二叉树
+#### Date: 2018/3/20
+#### Solution
+```
+1. 二叉树的序列化是指：把一棵二叉树按照某种遍历方式的结果以某种格式保存为字符串，从而使得内存中建立起来的二叉树可以持久保存
+2. 序列化可以基于 先序、中序、后序、按层 的二叉树遍历方式来进行修改。原理都是一样的（即遍历顺序不同而已，对每个结点的处理都是一样的），序列化的结果是一个字符串，序列化时通过  某种符号表示空节点（#），以 ！ 表示一个结点值的结束（value!）(当然也可以有其他表现方式)
+3. 反序列化就是由字符串变回二叉树
+```
+#### Note
+```
+1. 注意const_cast的错误使用
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to61.cpp)
+---
