@@ -676,6 +676,46 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to51.cpp)
 ---
+### #52 正则表达式匹配
+#### Date: 2018/3/20
+#### Solution
+```
+1. 正则表达式匹配
+2. 单纯罗列出所有可能发生的规则，if else
+```
+#### Note
+```
+1. 可以通过自动机来做
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to52.cpp)
+---
+### #53 表示数值的字符串
+#### Date: 2018/3/21
+#### Solution
+```
+1. 将字符串分为 +/- 数字串 . 数字串 e/E +/- 数字串
+2. 按照规则来判断，if else
+3. 注意 -.3e5的情况
+```
+#### Note
+```
+1. 可以通过自动机来做
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to53.cpp)
+---
+### #54 字符流中第一个不重复的字符
+#### Date: 2018/3/21
+#### Solution
+```
+1. 一个大小为256的数组，用来保存每个字符的访问次数
+2. 一个map用来保存当前访问次数为1的字符和对应的优先级
+3. 最后遍历map来找到结果字符
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to53.cpp)
+---
 ### #55 链表中环的入口结点
 #### Date: 2018/3/17
 #### Solution
@@ -755,4 +795,17 @@
 1. 注意const_cast的错误使用
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to61.cpp)
+---
+### #66 矩阵中的路径
+#### Date: 2018/3/20
+#### Solution
+```
+1. 回溯法
+2. 在四个方向尝试所有的格子
+3. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to66.cpp)
 ---
