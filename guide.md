@@ -809,7 +809,54 @@
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to61.cpp)
 ---
-### #66 矩阵中的路径
+### #62 二叉搜索树的第k个结点
+#### Date: 2018/3/23
+#### Solution
+```
+1. 中序遍历过程中通过全局遍历记录当前是第几大的值
+2. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to62.cpp)
+---
+### #63 数据流中的中位数
+#### Date: 2018/3/23
+#### Solution
+```
+
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to63.cpp)
+---
+### #64 滑动窗口的最大值
+#### Date: 2018/3/23
+#### Solution
+```
+
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to64.cpp)
+---
+### #65 矩阵中的路径
+#### Date: 2018/3/23
+#### Solution
+```
+1. 回溯法
+2. 在四个方向尝试所有的格子
+3. 递归
+```
+#### Note
+```
+```
+[code link](https://github.com/chenup/toOffer/blob/master/code/to65.cpp)
+---
+### #66 机器人的运动范围
 #### Date: 2018/3/20
 #### Solution
 ```
