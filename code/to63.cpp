@@ -26,3 +26,45 @@ private:
 */
 
 //最大堆和最小堆
+
+class Solution()
+{
+public:
+    void Insert(int num)
+    {
+        if(maxheap.empty() || num < maxheap.top())
+        {
+            maxheap.push(num);
+        }
+        else
+        {
+            minheap.push(num);
+        }
+        if(maxheap.size() == minheap.size() + 2)
+        {
+            minheap.push(maxheap.top());
+            maxheap.pop();
+        }
+        else if(minheap.size() > maxheap.size())
+        {
+            maxheap.push(minheap.top());
+            minheap.pop();
+        }
+    }
+
+    double GetMedian()
+    {
+        int sum = minheap.size() + maxheap.size();
+        if(sum % 2)
+        {
+            return minheap.top();
+        }
+        else
+        {
+            return (minheap.top() + maxheap.top()) / 2.0
+        }
+    }
+private:
+    priority_queue<int, vector<int>, less<int>> maxheap;
+    priority_queue<int, vector<int>, greater<int>> minheap;
+};

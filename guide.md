@@ -825,10 +825,14 @@
 #### Date: 2018/3/23
 #### Solution
 ```
-
+1. 最大堆和最小堆
+2. 最大堆的值都比最小堆的最小值要小
+3. 0 <= 最大堆的数目 - 最小堆的数目 <= 1
+4. 奇数时，中位数是最大堆的堆顶；偶数时，中位数是最大堆和最小堆堆顶的平均值
 ```
 #### Note
 ```
+1. 通过priority_heap来实现最大堆和最小堆
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to63.cpp)
 ---
@@ -836,10 +840,13 @@
 #### Date: 2018/3/23
 #### Solution
 ```
-
+1. 用一个双端队列，队列第一个位置保存当前窗口的最大值的索引，当窗口滑动一次:
+2. 判断当前最大值是否过期，过期则pop
+3. 新增加的值从队尾开始比较，把所有比他小的值的索引丢掉，这样就呈现一个值递减的队列
 ```
 #### Note
 ```
+1. 通过deque来实现双端队列
 ```
 [code link](https://github.com/chenup/toOffer/blob/master/code/to64.cpp)
 ---

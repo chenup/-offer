@@ -64,3 +64,33 @@ public:
 */
 
 //双端队列，空间复杂度O(n)，时间复杂度O(n)
+
+class Solution {
+public:
+    vector<int> maxInWindows(const vector<int>& num, unsigned int size)
+    {
+    	deque<int> dq;
+    	vector<int> res;
+    	if(size == 0)
+    	{
+    		return res;
+    	}
+    	for(int i = 0; i < num.size(); i++)
+    	{
+    		while(dq.size() && num[dq.back()] < num[i])
+    		{
+    			dq.pop_back();
+    		}
+    		while(dq.size() && i - dq.front()  + 1 > size)
+    		{
+    			dq.pop_front();
+    		}
+    		dq.push_back(i);
+    		if(i + 1 >= size)
+    		{
+    			res.push_back(num[dq.front()]);
+    		}
+    	}
+    	return res;
+    }
+};
