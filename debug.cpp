@@ -31,56 +31,10 @@ struct TreeNode {
 
 class Solution {
 public:
-    char* Serialize(TreeNode *root) 
-    {   
-        string str = dfs(root);
-		char* ret = new char[str.size() + 1];
-		int i;
-        for(i = 0; i < str.size(); i++)
-		{
-			ret[i] = str[i];
-		}
-		ret[i] = '\0'; 
-        return ret;
-    }
-    TreeNode* Deserialize(char *str) 
-    {
-    	int i = 0;
-    	return ddfs(str, i);
-    }
-
-    TreeNode* ddfs(char *str, int& i)
-    {
-    	if(str[i] == '#')
-    	{
-    		i = i + 2;
-    		return nullptr;
-    	}
-    	int num = 0;
-    	while(str[i] != '!')
-    	{
-    		num = num * 10 + str[i] - '0';
-    		i++;
-    	}
-    	i++;
-    	TreeNode* root = new TreeNode(num);
-    	root->left = ddfs(str, i);
-    	root->right = ddfs(str, i);
-    	return root;
-    }
-
-    string dfs(TreeNode* root)
-    {
-        string str = "";
-        if(root == NULL)
-        {
-            return string("#!");
-        }
-        str = str + to_string(root->val) + "!";
-        str += dfs(root->left);
-        str += dfs(root->right);
-        return str;
-    }
+    void test()
+	{
+		
+	} 
 };
 //对象初始化
 ListNode* initListNode()
@@ -186,21 +140,110 @@ void printTree(TreeNode* root)
 	printTree(root->right);
 }
 
-int main()
+//键盘输入数字矩阵
+vector<vector<int>> kc_num_matrix(int m, int n)
+{
+	vector<vector<int>> res(m, vector<int>(n, 0));
+	int k;
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = 0; j < n; j++)
+		{
+			scanf("%d", &k);
+			res[i][j] = k;	
+		}
+	}
+	for(auto it : res)
+	{
+		for(auto itt : it)
+		{
+			cout << itt << " ";
+		}
+		cout << endl;
+	}
+	return res;
+}
+
+//键盘输入字符矩阵
+vector<vector<char>> kc_ch_matrix(int m, int n)
+{
+	vector<vector<char>> res(m, vector<char>(n, 0));
+	char c;
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = 0; j < n; j++)
+		{
+			cin >> c;
+			res[i][j] = c;	
+		}
+	}
+	for(auto it : res)
+	{
+		for(auto itt : it)
+		{
+			cout << itt << " ";
+		}
+		cout << endl;
+	}
+	return res;
+}
+
+//键盘输入字符串数组
+#define N 256
+vector<string> kc_str_array(int n)
+{
+	vector<string> res;
+	char str[N];
+	//不带空格 
+	/*
+	for(int i = 0; i < n; i++)
+	{
+		scanf("%s", str);
+		res.push_back(string(str));
+	}
+	*/
+	//带空格
+	gets(str);
+	for(int i = 0; i < n; i++)
+	{
+		gets(str);
+		res.push_back(string(str));
+	}
+	//
+	cout << "#result#" << endl;
+	for(auto buf : res)
+	{
+		cout << buf << endl;
+	}
+	return res;
+}
+
+//键盘输入 
+void kb_cin()
+{
+	//将文件输入转为键盘输入 
+	//freopen("data.in","r", stdin);
+	int m, n;
+	scanf("%d%d", &m, &n);
+	kc_num_matrix(m, n); 
+}
+
+//初始化结构
+void init()
 {
 	//树输入
-	TreeNode* root = initTree();
+	//TreeNode* root = initTree();
 	
 	//链表输入
 	//ListNode* head = initListNode();
 
 	//矩阵输入
 	//vector<vector<int>> nums = initMatrix(); 
-	
-	//计算
-	char* str = Solution().Serialize(root);
-	cout << str << endl;
-	TreeNode* res = Solution().Deserialize(str);
+}
+
+//标准输出 
+void std_print()
+{
 	//链表输出
 	//printListNode(res);
 	
@@ -211,7 +254,16 @@ int main()
 	//printArray(res);
 	
 	//树的中序输出
-	printTree(res);
-
+	//printTree(res);
+}
+int main()
+{
+	kb_cin();
+	//init();
+	//计算
+	//Solution().test();
+	//文件输出
+	std_print();
+	
 	return 0;
 }
